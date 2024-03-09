@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f5f5f5]">
+    <section class="w-full sticky bg-[#f5f5f5] header" x-data="{ menubar: false }" x-cloak>
+        <header class="mim-container header-section mx-auto flex justify-between gap-4 items-center">
+            <div>
+                <div>
+                    <a href="index.html"><img src="img/dark-logo.png" alt="this is an image" class="image"></a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div class="flex justify-center items-center gap-8 navigation">
+                        <ul class="lg:flex justify-center items-center gap-4 hidden links-container">
+                            <li><a class=" font-Montserrat text-[14px] px-[5px] text-[#777777] uppercase"
+                                    href="#homepage">Home</a></li>
+                            <li><a class="font-Montserrat cursor-pointer transition-transform text-[14px] px-[5px] text-[#777777] uppercase"
+                                    href="#about">About</a></li>
+                            <li><a class="font-Montserrat text-[14px] px-[5px] text-[#777777] uppercase"
+                                    href="#portfolio">portfolio</a></li>
+                            <li><a class="font-Montserrat text-[14px] px-[5px] text-[#777777] uppercase"
+                                    href="#services">services</a></li>
+                            <li><a class="font-Montserrat text-[14px] px-[5px] text-[#777777] uppercase"
+                                    href="#blog">Blog</a></li>
+                            <li><a class="font-Montserrat text-[14px] px-[5px] text-[#777777] uppercase"
+                                    href="#contact">contact</a></li>
+                        </ul>
+                        <div>
+                            <div class="hamburger text-[#777777] text-[20px] cursor-pointer"
+                                x-on:click="menubar = true">
+                                <div class="line-1"></div>
+                                <div class="line-1"></div>
+                                <div class="line-1"></div>
+                            </div>
+                            <div x-show="menubar">
+                                <div class="absolute top-0 right-0 bg-[#2b2b2b] h-[100vh] w-[300px] navbar-more"
+                                    class="menubar-section">
+                                    <div>
+                                        <div x-on:click="menubar = false">
+                                            <i
+                                                class="fa-regular fa-circle-xmark text-[#777777] text-[25px] p-2 hover:text-white transition-all duration-150 cursor-pointer"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <a href="index.html" class="pt-[50px]"><img src="img/light-logo.png"
+                                                alt="this is an image"></a>
+                                    </div>
+                                    <div>
+                                        <div class="pt-[60px]">
+                                            <ul class="first:border-t flex flex-col  divide-y">
+                                                <li
+                                                    class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black">
+                                                    <a class="text-white text-[14px] px-[13px] uppercase font-semibold "
+                                                        href="#homepage">Home</a>
+                                                </li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="#about">About</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="#portfolio">portfolio</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="#services">Services</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="#contact">Contact</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="#blog">Blog</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="">HomeUpdate & notice</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="">Pricing & timeline</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="">Pricing & timeline (Dark)</a></li>
+                                                <li class="list-none py-[10px] cursor-pointer transition-all duration-150 w-full hover:bg-black"><a
+                                                        class="text-white text-[14px] px-[13px] uppercase font-semibold"
+                                                        href="">portfolio details</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
+    <!-- hero section starts -->
+    <section class="bg-[#f5f5f5] md:px-[48px] px-[20px]" id="homepage">
+        <main class="mim-container mx-auto">
+            <div class="main-container flex  md:justify-between justify-center md:flex-row flex-col items-center">
+                <div class="left md:mt-0 mt-[65px] ">
+                    <div class="flex items-center justify-center flex-col md:justify-start md:items-start">
+                        <h5 class="text-[#919191] font-bold uppercase text-[16px] text-center">Hello, My name is</h5>
+                        <h1
+                            class="text-[#414141] lg:text-[44px] text-center md:text-start leading-10 text-[38px] md:text-[34px] mt-4 md:mt-[2px] font-bold">
+                            ANDREW JORDAN</h1>
+                        <p
+                            class="text-[#6A6A6A] text-[16px] font-medium text-center md:mt-[2px] md:text-start mt-4 max-w-[585px] md:max-w-[400px] lg:max-w-[585px] mb-[40px]">
+                            On the other hand, we denounce with righteous indignation and dislike men who are so
+                            beguiled demord by.</p>
+                        <a href="#"
+                            class="bg-[#393939] text-[#f3f3f3] font-bold
+                        rounded-md py-4 px-11 uppercase text-[14px] hover:bg-black transition-all ease-in-out duration-300">My
+                            work</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <img class="md:h-[617px] md:w-auto lg:w-auto mt-[50px] md:mt-0" src="img/author.png"
+                            alt="this is an image">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <!-- hero section ends -->
+    <!-- About section starts -->
+    <section class="py-[100px] bg-white md:px-[48px] px-[20px] " id="about">
+        <div class="about-heading">
+            <h1 class="text-[32px] mb-[50px] font-bold pb-[16px] text-center w-full text-[#494949] uppercase">About us
+            </h1>
+        </div>
+        <div data-aos="fade-up"
+            class="upper-arrow z-10 w-[30px] h-[35px] bg-[#393939] flex justify-center items-center fixed right-4 bottom-16">
+            <a href="#homepage"><i class="fa-solid fa-angle-up text-white w-[12px] relative left-[-1px]"></i></a>
+        </div>
+        <div
+            class="about-section flex gap-11 flex-col xl:flex-row md:justify-normal justify-center md:items-start items-center mim-container mx-auto">
+            <div class="left">
+                <div class="flex justify-center items-center md:block flex-col">
+                    <h1 class="text-[#4F4F4F] text-[22px] font-bold mb-[15px]">Howdy!</h1>
+                    <p
+                        class="max-w-[515px] text-[#767676] md:text-start text-center text-[16px] mb-[40px] leading-7 font-medium">
+                        On the other hand, we denounce with righteous indignation and dislike men who are so beguiled
+                        and demoralized by th charms of pleasure of the moment, so blinded by desire, tht they cannot
+                        foresee the pain and trouble that are</p>
+                    <a href="#"
+                        class="bg-[#393939] px-6 py-4 text-[#f3f3f3] uppercase font-bold rounded-md hover:bg-black transition-all text-[14px] ease-in-out duration-300 ">Downlode
+                        My cv</a>
+                </div>
+            </div>
+            <div class="about-right">
+                <div class="progress-bar-design">
+                    <h1>Design</h1>
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="number-1">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-bar-html-css">
+                    <h1>Html & css</h1>
+                    <div class="outer">
+                        <div class="inner" data-progress="85">
+                            <div id="number-2">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-bar-wordpress">
+                    <h1>wordpress</h1>
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="number-3">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section ends -->
+    <!-- experince section starts -->
+    <section class="md:px-[48px] px-[20px] experince">
+        <div class="md:px-48px mx-auto md:py-[100px] py-[80px] mim-container">
+            <div class="experince-heading">
+                <h1 class="text-center font-bold text-[32px] uppercase text-[#494949]">My experince</h1>
+            </div>
+            <div class="experince-section grid pt-[60px]">
+                <div class="experince-col-1">
+                    <div class="since">
+                        <h2>Behance</h2>
+                        <span>2007-2008</span>
+                    </div>
+                    <div class="flex">
+                        <div class="dashline-container">
+                            <div class="dashline"></div>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <h1>Web Designer & Developer</h1>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="experince-col-1">
+                    <div class="since">
+                        <h2>Wipux</h2>
+                        <span class="text-center">2010-2014</span>
+                    </div>
+                    <div class="flex">
+                        <div class="dashline-container">
+                            <div class="dashline"></div>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <h1>Web & Print Designer</h1>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="experince-col-1">
+                    <div class="since">
+                        <h2>RegalTheme</h2>
+                        <span>2010-2012</span>
+                    </div>
+                    <div class="flex">
+                        <div class="dashline-container">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="experince-content">
+                            <h1>Programmer & Developer</h1>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="experince-col-1">
+                    <div class="since">
+                        <h2>ThemeForest</h2>
+                        <span>2014-2017</span>
+                    </div>
+                    <div class="flex">
+                        <div class="dashline-container">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <h1>
+                                Programmer & Developer</h1>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- experince section ends -->
+    <!-- portfolio section starts -->
+    <section id="portfolio" class="bg-white md:px-[48px] px-[20px]" x-data="{portfolioAll : true , portfolioWeb: false , portfolioDesign: false , portfolioPrint: false , portfolioNew: false , portfolioWork: false}">
+        <div class="portfolio-section py-[100px] mim-container">
+            <div class="portolio-heading text-[32px] font-bold pb-3 text-[#494949] text-center">
+                 <h1>MY PORTFOLIO</h1>
+            </div>
+            <div class="potfolio-menu text-center mt-10 mb-[60px] text-[#6D6D6D] text-[12px] uppercase flex justify-center items-center gap-7">
+                <button id="all" x-on:click="portfolioAll = true , portfolioWeb = false , portfolioDesign = false , portfolioPrint = false , portfolioNew = false , portfolioWork = false" class="uppercase text-[14px]">All</button>
+                <button id="web" x-on:click="portfolioAll = false , portfolioWeb = true , portfolioDesign = false , portfolioPrint = false , portfolioNew = false , portfolioWork = false" class="uppercase text-[14px]">Web</button>
+                <button id="design" x-on:click="portfolioAll = false , portfolioWeb = fasle , portfolioDesign = true , portfolioPrint = false , portfolioNew = false , portfolioWork = false" class="uppercase text-[14px]">design</button>
+                <button id="print" x-on:click="portfolioAll = false , portfolioWeb = false , portfolioDesign = false , portfolioPrint = true , portfolioNew = false , portfolioWork = false" class="uppercase text-[14px]">print</button>
+                <button id="new" x-on:click="portfolioAll = false , portfolioWeb = false , portfolioDesign = false , portfolioPrint = false , portfolioNew = true , portfolioWork = false" class="uppercase text-[14px]">new</button>
+                <button id="work" x-on:click="portfolioAll = false , portfolioWeb = false , portfolioDesign = false , portfolioPrint = false , portfolioNew = false , portfolioWork = true" class="uppercase text-[14px]">3D work</button>
+            </div>
+            <div class="potfolio-content">
+                <div class="portfolio-image grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3" x-show="portfolioAll">
+                    <div class="portfolio-image-container row-span-2">
+                        <img src="img/Headphone-Design368x478.jpg" alt="">
+                    </div>
+                    <div class="portfolio-image-container"><img src="img/portfolio-5-1.jpg" alt=""></div>
+                    <div class="portfolio-image-container row-span-2"><img src="img/portfolio-7-368x478.jpg" alt=""></div>
+                    <div class="portfolio-image-container"><img src="img/portfolio-4-1.jpg" alt=""></div>
+                    <div class="portfolio-image-container"><img src="img/portfolio-3-1.jpg" alt=""></div>
+                    <div class="portfolio-image-container row-span-2"><img src="img/portfolio-1-2-368x478.jpg" alt=""></div>
+                    <div class="portfolio-iamge-container row-span-2"><img src="img/portfolio-2-2-368x478.jpg" alt=""></div>
+                    <div class="portfolio-iamge-container"><img src="img/portfolio-7-1.jpg" alt=""></div>
+                </div>
+                <div class="portfolio-image grid grid-cols-3 gap-3" x-show="portfolioWeb">
+                    <img src="img/portfolio-2-2-368x478.jpg" alt="">
+                    <img src="img/portfolio-1-2-368x478.jpg" alt="">
+                    <img src="img/portfolio-7-1.jpg" alt="">
+                </div>
+                <div class="portfolio-image grid grid-cols-3 gap-3" x-show="portfolioDesign">
+                    <img src="img/Headphone-Design368x478.jpg" alt="">
+                    <img src="img/portfolio-5-1.jpg" alt="">
+                    <img src="img/portfolio-2-2-368x478.jpg" alt="">
+                </div>
+                <div class="portfolio-image grid grid-cols-3 gap-3" x-show="portfolioPrint">
+                    <img src="img/portfolio-5-1.jpg" alt="">
+                    <img src="img/portfolio-7-368x478.jpg" alt="" class="row-span-2">
+                    <img src="img/portfolio-4-1.jpg" alt="">
+                    <img src="img/portfolio-3-1.jpg" alt="">
+                </div>
+                <div class="portfolio-image grid grid-cols-3 gap-3" x-show="portfolioNew">
+                    <img src="img/Headphone-Design368x478.jpg" alt="">
+                    <img src="img/portfolio-7-368x478.jpg" alt="">
+                    <img src="img/portfolio-1-2-368x478.jpg" alt="">
+                </div>
+                <div class="portfolio-image grid grid-cols-3 gap-3" x-show="portfolioWork">
+                    <img src="img/portfolio-4-1.jpg" alt="">
+                    <img src="img/portfolio-1-2-368x478.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- portfolio section ends -->
+    <!-- services section starts -->
+    <section class="md:px-[48px] px-[20px]" id="services">
+        <div class="mx-auto py-[100px] mim-container">
+            <div class="services-heading mb-[60px]">
+                <h1 class="text-center text-[32px] font-bold text-[#494949] uppercase">My services</h1>
+            </div>
+            <div class="card-main-container gap-4">
+                <div class="service-card-container card-1 flex justify-center items-center flex-col px-[10px] md:pt-[50px] md:pb-[60px] py-[30px] md:py-0">
+                    <div
+                        class="w-[40px] flex justify-center items-center h-[40px] rounded-full border border-[#8a8a8a] mb-[20px] text-[#8a8a8a] icon-container">
+                        <i class="fa-solid fa-desktop text-[20px]"></i>
+                    </div>
+                    <h1 class="text-[#757575] font-bold text-[14px]">&nbsp; UI/UX DESIGN &nbsp;</h1>
+                    <img src="img/card-line.png" class="w-16 h-[2px] mt-[15px]" alt="">
+                    <p class="text-center text-[#979797] my-[15px] tex-[14px]">There are many variatio ns of pssages of
+                        Lorm
+                        available, bu in some form</p>
+                </div>
+                <div class=" service-card-container card-2 flex justify-center items-center flex-col px-[10px] md:pt-[50px] md:pb-[60px] py-[30px] md:py-0">
+                    <div
+                        class="w-[40px] flex justify-center items-center h-[40px] rounded-full border border-[#8a8a8a] mb-[20px] text-[#8a8a8a] icon-container">
+                        <i class="fa-regular fa-heart text-[20px]"></i>
+                    </div>
+                    <h1 class="text-[#757575] font-bold text-[14px]">WEB DEVELOPMENT</h1>
+                    <img src="img/card-line.png" class="w-16 h-[2px] mt-[15px]" alt="">
+                    <p class="text-center text-[#979797] my-[15px] tex-[14px]">There are many variatio ns of pssages of
+                        Lorm
+                        available, bu in some form</p>
+                </div>
+                <div class="service-card-container card-3 flex justify-center items-center flex-col px-[10px] md:pt-[50px] md:pb-[60px] py-[30px] md:py-0">
+                    <div
+                        class="w-[40px] flex justify-center items-center h-[40px] rounded-full border border-[#8a8a8a] mb-[20px] text-[#8a8a8a] icon-container">
+                        <i class="fa-solid fa-crosshairs text-[20px]"></i>
+                    </div>
+                    <h1 class="text-[#757575] font-bold text-[14px]">
+                        GRAPHIC DESIGN</h1>
+                    <img src="img/card-line.png" class="w-16 h-[2px] mt-[15px]" alt="">
+                    <p class="text-center text-[#979797] my-[15px] tex-[14px]">There are many variatio ns of pssages of
+                        Lorm
+                        available, bu in some form</p>
+                </div>
+                <div class="service-card-container card-4 flex justify-center items-center flex-col px-[10px] md:pt-[50px] md:pb-[60px] py-[30px] md:py-0">
+                    <div
+                        class="w-[40px] flex justify-center items-center h-[40px] rounded-full border border-[#8a8a8a] mb-[20px] text-[#8a8a8a] icon-container">
+                        <i class="fa-brands fa-wordpress text-[20px]"></i>
+                    </div>
+                    <h1 class="text-[#757575] font-bold text-[14px]">RESPONSIVE DESIGN</h1>
+                    <img src="img/card-line.png" class="w-16 h-[2px] mt-[15px]" alt="">
+                    <p class="text-center text-[#979797] my-[15px] tex-[14px]">There are many variatio ns of pssages of
+                        Lorm
+                        available, bu in some form</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services section ends -->
+    <!-- testimonial section starts -->
+    <section class="md:px-[48px] px-[20px] py-[100px] bg-white ">
+        <div class="testimonial-heading text-[32px] text-[#494949] font-bold uppercase text-center">
+            <h1>MY TESTIMONIAL</h1>
+        </div>
+        <div class="overflow-hidden md:max-w-[720px] swiper mySwiper mim-container">
+            <div class="flex justify-start items-center swiper-wrapper">
+                <div class="z-[-1] testiminial-section cursor-ew-resize mt-[150px] swiper-slide mx-auto flex-col flex items-center bg-[#f5f5f5] justify-center">
+                    <div class="testimonial-image relative top-[-40px]">
+                     <img src="img/client-8-98x98.jpg" class="rounded-full" alt="">
+                    </div>
+                    <div class="text-center">
+                     <h1 class="text-[#5C5C5C] text-[18px] font-bold mt-[-20px] mb-[10px]">John deo</h1>
+                     <span class="text-[#838383] font-bold capitalize text-[13px]">designer</span>
+                     <p class="mb-[40px] my-[10px] max-w-[700px] text-[#888888] text-[14px] font-medium leading-7 px-4">laboriosam adipisci amet distinctio dolorem asperiores nam veritatis mollitia obcaecati eaque. Ratione ducimus itaque consectetur cum unde quia fugiat quod!</p>
+                    </div>
+                 </div>
+                <div class="testiminial-section cursor-ew-resize swiper-slide max-w-[720px] mt-[150px] mx-auto bg-[#f5f5f5] flex-col flex items-center justify-center">
+                    <div class="testimonial-image relative top-[-40px]">
+                     <img src="img/testimonial.png" class="rounded-full" alt="">
+                    </div>
+                    <div class="text-center">
+                     <h1 class="text-[#5C5C5C] text-[18px] font-bold mt-[-20px] mb-[10px]">Cristie jonson</h1>
+                     <span class="text-[#838383] font-bold capitalize text-[13px]">Developer</span>
+                     <p class="mb-[40px] my-[10px] max-w-[700px] text-[#888888] text-[14px] font-medium leading-7 px-4">laboriosam adipisci amet distinctio dolorem asperiores nam veritatis mollitia obcaecati eaque. Ratione ducimus itaque consectetur cum unde quia fugiat quod!</p>
+                    </div>
+                 </div>
+                <div class="testiminial-section cursor-ew-resize swiper-slide max-w-[720px] mt-[150px] mx-auto bg-[#f5f5f5] flex-col flex items-center justify-center">
+                    <div class="testimonial-image relative top-[-40px]">
+                     <img src="img/client-8-98x98.jpg" class="rounded-full" alt="">
+                    </div>
+                    <div class="text-center">
+                     <h1 class="text-[#5C5C5C] text-[18px] font-bold mt-[-20px] mb-[10px]">Adam Lord</h1>
+                     <span class="text-[#838383] font-bold capitalize text-[13px]">wordpress specialist</span>
+                     <p class="px-4 my-[10px] max-w-[700px] text-[#888888] text-[14px] font-medium leading-7 mb-[40px]">laboriosam adipisci amet distinctio dolorem asperiores nam veritatis mollitia obcaecati eaque. Ratione ducimus itaque consectetur cum unde quia fugiat quod!</p>
+                    </div>
+                 </div>
+            </div>
+            <div class="swiper-pagination">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial section ends -->
+    <!-- blog post section starts -->
+    <section class="md:px-[48px] px-[20px]" id="blog">
+        <div class="mim-container py-[100px]">
+        <div class="blogpost-heading items-center">
+            <h1 class="text-[32px] text-center text-[#494949] font-bold uppercase">Blog Post</h1>
+        </div>
+        <div class="blogpost-section flex justify-between md:flex-row flex-col items-center mt-[60px] gap-4">
+            <div class="bg-white blog-post">
+                <div class="blog-image md:max-w-[360px] max-w-[500px]">
+                    <img src="img/post-1.jpg" class="w-full" alt="">
+                </div>
+                <div class="px-[10px] py-[20px] flex justify-between items-center">
+                    <div class="flex gap-2 text-[#979494]">
+                        <i class="fa-solid fa-calendar-week text-[16px]"></i>
+                        <p class="text-[12px]">August 21,2015</p>
+                    </div>
+                    <div class="flex gap-2 text-[#979494]">
+                        <i class="fa-regular fa-message text-[16px]"></i>
+                        <p class="text-[12px]">One Responses</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex justify-between items-start px-[17px] py-[20px]">
+                    <p class="mb-[15px] text-[#737373] text-[18px] leading-8 md:max-w-[287px] max-w-full">Rio De Janeiro The Kingdom Of Sports</p>
+                    <i class="fa-solid fa-plus relative top-2"></i>
+                </div>
+            </div>
+            <div class="bg-white blog-post">
+                <div class="blog-image md:max-w-[360px] max-w-[500px]">
+                    <img src="img/post-2.jpg" class="w-full" alt="">
+                </div>
+                <div class="px-[10px] py-[20px] flex justify-between items-center">
+                    <div class="flex gap-2 text-[#979494]">
+                        <i class="fa-solid fa-calendar-week text-[16px]"></i>
+                        <p class="text-[12px]">August 21,2015</p>
+                    </div>
+                    <div class="flex gap-2 text-[#979494]">
+                        <i class="fa-regular fa-message text-[16px]"></i>
+                        <p class="text-[12px]">4 Responses</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex justify-between items-start px-[17px] py-[20px]">
+                    <p class="mb-[15px] text-[#737373] text-[18px] leading-8 md:max-w-[287px] max-w-full">Red Carpet The Best Celebrity Dress Of 2017</p>
+                    <i class="fa-solid fa-plus relative top-2"></i>
+                </div>
+            </div>
+            <div class="bg-white blog-post">
+                <div class="blog-image md:max-w-[360px] max-w-[500px]">
+                    <img src="img/post-3.jpg" class="w-full" alt="">
+                </div>
+                <div class="px-[10px] py-[20px] flex justify-between items-center">
+                    <div class="flex gap-2 text-[#979494]">
+                        <i class="fa-solid fa-calendar-week text-[16px]"></i>
+                        <p class="text-[12px]">August 21,2015</p>
+                    </div>
+                    <div class="flex gap-2 text-[#979494]">
+                        <i class="fa-regular fa-message text-[16px]"></i>
+                        <p class="text-[12px]">4 Responses</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex justify-between items-start px-[17px] py-[20px]">
+                    <p class="mb-[15px] text-[#737373] text-[18px] leading-8 md:max-w-[287px] max-w-full">Traveling 10 Most Gorgeous Places On Earth</p>
+                    <i class="fa-solid fa-plus relative top-2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- blog post section ends -->
+    <!-- contact section starts -->
+    <section class="px-[20px] md:px-[48px] bg-white" id="contact">
+     <div class="contact-container py-[100px] mim-container flex gap-5 lg:gap-40 flex-col lg:flex-row">
+         <div class="contact-left">
+            <div class="contact-heading">
+                <h1 class="text-[#494949] text-[32px] font-bold uppercase pb-[10px]">Let's get in touch</h1>
+            </div>
+            <p class="text-[14px] text-[#777777] leading-6 font-medium max-w-[360px] mb-[30px] mt-[30px]">There are many variations of pssges of Lorem Ipsum available, bu in some form, by</p>
+            <div class="contact-phone flex gap-4 mb-[20px]">
+                <div class="w-[47px] h-[47px] border border-[#A1A1A1] rounded-full flex justify-center items-center">
+                    <i class="fa-solid fa-phone text-[#A1A1A1] text-[20px]"></i>
+                </div>
+                <div>
+                    <p class="text-[#7B7B7B] text-[18px] font-medium">Phone</p>
+                    <span class="text-[#979797] text-[14px] relative">+88 669 658 6586</span>
+                </div>
+            </div>
+            <div class="contact-phone flex gap-4 mb-[20px]">
+                <div class="w-[47px] h-[47px] border border-[#A1A1A1] rounded-full flex justify-center items-center">
+                    <i class="fa-regular fa-envelope text-[#A1A1A1] text-[20px]"></i>
+                </div>
+                <div>
+                    <p class="text-[#7B7B7B] text-[18px] font-medium">Email</p>
+                    <span class="text-[#979797] text-[14px] relative">email@domain.com</span>
+                </div>
+            </div>
+            <div class="contact-phone flex gap-4">
+                <div class="w-[47px] h-[47px] border border-[#A1A1A1] rounded-full flex justify-center items-center">
+                    <i class="fa-solid fa-house text-[#A1A1A1] text-[20px]"></i>
+                </div>
+                <div>
+                    <p class="text-[#7B7B7B] text-[18px] font-medium">Location</p>
+                    <span class="text-[#979797] text-[14px] relative">Location Name,Here.US</span>
+                </div>
+            </div>
+         </div>
+         <div class="contact-right mt-[50px]">
+                <div class="flex md:flex-row flex-col gap-12">
+                    <input class=" py-2 md:w-[220px] w-full text-[#b3b3b3] font-light outline-none" type="text" placeholder="Your Name">
+                    <input class="py-2 md:w-[220px] w-full text-[#b3b3b3] font-light outline-none" type="text" placeholder="Your Email">
+                </div>
+                <div>
+                    <textarea class="mt-[60px] px-2 py-2 w-full md:w-[490px] lg:w-full text-[#b3b3b3] font-light outline-none" rows="6" placeholder="Your Message"></textarea>
+                </div>
+                <div>
+                    <button class="text-[#f3f3f3] text-[14px] font-normal bg-[#393939] hover:text-white hover:bg-black transition duration-200 px-[30px] py-[10px] mt-[30px]">SEND MESSAGE</button>
+                </div>
+         </div>
+     </div>
+    </section>
+    <!-- contact section ends -->
+    
+    <!-- footer section starts -->
+    <footer class="md:px-[48px] px-[20px]">
+        <div class="py-5 mim-container flex md:justify-between gap-3 justify-center md:flex-row flex-col items-center">
+            <div>
+                <p class="text-[#929292] text-[13px]">Copyright &#169; 2022 Regaltheme</p>
+            </div>
+            <div class="text-[#919191] text-[13px]">
+                <a class="px-1 md:px-4" href="index.html">Facebook</a>
+                <a class="px-1 md:px-4" href="index.html">Email</a>
+                <a class="px-1 md:px-4" href="index.html">Twitter</a>
+                <a class="px-1 md:px-4" href="index.html">Linkedin</a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section ends -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 160,
+        });
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+          },
+        });
+      </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
